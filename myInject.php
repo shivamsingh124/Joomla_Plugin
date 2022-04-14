@@ -2,7 +2,7 @@
 //First start with information about the Plugin and yourself. For example:
 /**
  * @package     Joomla.Plugin
- * @subpackage  Search.nameofplugin
+ * @subpackage  Search.myInject
  *
  * @copyright   Copyright
  * @license     License, for example GNU/GPL
@@ -11,7 +11,9 @@
 //To prevent accessing the document directly, enter this code:
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
-
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Event\Event;
+use Joomla\Event\SubscriberInterface;
 // Require the component's router file (Replace 'nameofcomponent' with the component your providing the search for
 require_once JPATH_SITE .  '/components/nameofcomponent/helpers/route.php';
 
@@ -20,7 +22,7 @@ require_once JPATH_SITE .  '/components/nameofcomponent/helpers/route.php';
  *
  * The class name should start with 'PlgSearch' followed by the name of the plugin. Joomla calls the class based on the name of the plugin, so it is very important that they match
  */
-class PlgSearchNameofplugin extends JPlugin
+class PlgUsermyInject extends JPlugin
 {
 	/**
 	 * Constructor
@@ -30,10 +32,9 @@ class PlgSearchNameofplugin extends JPlugin
 	 * @param       array   $config  An array that holds the plugin configuration
 	 * @since       1.6
 	 */
-	public function __construct(& $subject, $config)
+	public function onUserLogin($user, $options=array())
 	{
-		parent::__construct($subject, $config);
-		$this->loadLanguage();
+		$input_box=$this->params->get('input_box');
 	}
 
 	// Define a function to return an array of search areas. Replace 'nameofplugin' with the name of your plugin.
