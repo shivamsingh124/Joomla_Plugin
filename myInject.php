@@ -5,10 +5,8 @@
 defined( '_JEXEC' ) or die( 'Access Deny' );
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
-
 // error_reporting(E_ALL);
 // ini_set('display_errors',l);
-
 
 class PlgSystemmyInject extends JPlugin
 {
@@ -33,24 +31,22 @@ class PlgSystemmyInject extends JPlugin
 		// $body = JResponse::getBody(); 													deprecated
 		$content= JFactory::getApplication()->getBody();
 		//JResponse::setBody($body); 														deprecated
+		$replacetext = $params->get('inputarea');
 		if (preg_match_all('/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is', $content, $matches))
 {
-    $content = preg_replace(
-        '/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is',
-        '<h1>'.$replacetext.'</h1>',
-        $content);
+				$content = preg_replace(
+					'/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is',
+					'<h1>'.$replacetext.'</h1>',
+					$content);
 } 
-elseif (preg_match_all('/(<h1.*?)(>)/is', $content, $matches))
+		elseif (preg_match_all('/(<h1.*?)(>)/is', $content, $matches))
 {
-    $content = preg_replace(
-        '/(<h1.*?)(>)/',
-        '<h1>'.$replacetext.'</h1>',
-        $content);
+				$content = preg_replace(
+					'/(<h1.*?)(>)/',
+					'<h1>'.$replacetext.'</h1>',
+					$content);
 }
 		JFactory::getApplication()->setBody($content);
 		// $input_area=$this->params->get('input_area', defaultsetting);
-		// JFactory::getUser(); 
-		// $input=$app->getMenu();
-		// $item=$input->getItem($input_box);
 	}
 }
