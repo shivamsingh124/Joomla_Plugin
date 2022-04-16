@@ -1,5 +1,6 @@
+<! -- Defination File -->
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="4.1" type="plugin" group="content" method="upgrade">
+<extension version="4.1" type="plugin" group="system" method="upgrade">
 	<name>Inject-Plugin</name>
 	<author>Shivam Singh</author>
 	<creationDate>April 2022</creationDate>

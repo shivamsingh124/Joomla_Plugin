@@ -1,29 +1,16 @@
 <?php
-//First start with information about the Plugin and yourself. For example:
-/**
- * @package     Joomla.Plugin
- * @subpackage  Search.myInject
- *
- * @copyright   Copyright
- * @license     License, for example GNU/GPL
- */
-
+// Using System Plugin (onAfterRender,onBeforeCompileHead)
 //To prevent accessing the document directly, enter this code:
 // no direct access
 defined( '_JEXEC' ) or die( 'Access Deny' );
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
-use Joomla\Event\SubscriberInterface;
-use Joomla\CMS\Factory;
-use Joomla\CMS\Uri\Uri;
-// Require the component's router file (Replace 'nameofcomponent' with the component your providing the search for
-// require_once JPATH_SITE .  '/components/nameofcomponent/helpers/route.php';
 
 // error_reporting(E_ALL);
 // ini_set('display_errors',l);
 
 
-class PlgContentmyInject extends JPlugin
+class PlgSystemmyInject extends JPlugin
 {
 	/**
 	 * Constructor
@@ -39,15 +26,31 @@ class PlgContentmyInject extends JPlugin
 		$this->minimumJoomla = '3.9';
 		$this->minimumPhp    = '7.2.5';
 	}
-
-	public function onContentPrepare($content, $article, $params, $limit)
+	public function onBeforeCompileHead()
 	{
-		$input_area=$this->params->get('input_area', defaultsetting);
 		$app=JFactory::getApplication();
+		$document = JFactory::getDocument();
+		// $body = JResponse::getBody(); 													deprecated
+		$content= JFactory::getApplication()->getBody();
+		//JResponse::setBody($body); 														deprecated
+		if (preg_match_all('/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is', $content, $matches))
+{
+    $content = preg_replace(
+        '/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is',
+        '<h1>'.$replacetext.'</h1>',
+        $content);
+} 
+elseif (preg_match_all('/(<h1.*?)(>)/is', $content, $matches))
+{
+    $content = preg_replace(
+        '/(<h1.*?)(>)/',
+        '<h1>'.$replacetext.'</h1>',
+        $content);
+}
+		JFactory::getApplication()->setBody($content);
+		// $input_area=$this->params->get('input_area', defaultsetting);
 		// JFactory::getUser(); 
 		// $input=$app->getMenu();
 		// $item=$input->getItem($input_box);
-		// $url=JRoute::_($item->link.'&itemId='.$input_box);
-		// $app->redirect($url,'Login successful');
 	}
 }
