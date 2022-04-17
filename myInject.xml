@@ -5,8 +5,8 @@
 	<creationDate>April 2022</creationDate>
 	<copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>admin@joomla.org</authorEmail>
-	<authorUrl>www.joomla.org</authorUrl>
+	<authorEmail>shivamsingh12042018@gmail.com</authorEmail>
+	<authorUrl>https://shivamsinghportfolio.netlify.app/</authorUrl>
 	<version>1.0.0</version>
 	<description>INJECTING_A_JS_ FILE_PLUGIN</description>
 	<files>
@@ -27,6 +27,7 @@
 					label="Add_Input_Value"
 					folder="editor"
 					default="HI! JOOMLA USER"
+					description="Add_Input_Value_DSC"
 				/>
 			</fieldset>
 			
