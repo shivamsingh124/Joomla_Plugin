@@ -15,7 +15,6 @@ When a user activates the plugin, it should inject a JS script into the webpage,
 https://youtu.be/W-CsnaP4-S0
 
 
-
 https://user-images.githubusercontent.com/82861332/163722280-3d4a7d02-9634-4dd2-ba1c-00e11feb39f1.MP4
 
 
@@ -50,6 +49,27 @@ public function onBeforeCompileHead()
    }
  }
 ```
+
+## Plugin Specifications:
+- Type: <b> System </b> <br/>
+- Events Used: <b> onBeforeCompileHead </b>
+- Installable through the Joomla Extension Manager.
+- Executed in the backend.
+- Follows Joomla Coding Standards.
+- Follows Joomla Naming Conventions.
+- Joomla CodeSniffer configured.
+- 
+
+## Plugin Folder Structure
+
+    ├── administrator
+    │	└──language
+    │   	└── en-GB.plg_system_vsheadings.ini
+    └── myInject.php
+    └── myInject.xml
+    └── joomla_plugin.rar
+    └── Index.html
+
 
 ### Update Server
 
