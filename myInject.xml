@@ -1,6 +1,5 @@
-<! -- Defination File -->
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="4.1" type="plugin" group="System" method="upgrade">
+<extension version="4.1" type="plugin" group="system" method="upgrade">
 	<name>Inject-Plugin</name>
 	<author>Shivam Singh</author>
 	<creationDate>April 2022</creationDate>
@@ -23,7 +22,7 @@
 		<fields name="params">
 			<fieldset name="basic" label="Input field">
 				<field
-					name="inputarea"
+					name="Inputarea"
 					type="text"
 					label="Add_Input_Value"
 					folder="editor"

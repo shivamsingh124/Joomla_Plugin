@@ -1,12 +1,15 @@
 <?php
-// Using System Plugin (onAfterRender,onBeforeCompileHead)
+// Using System Plugin (onAfterRender,onBeforeCompileHead,onContntPrepare)
 //To prevent accessing the document directly, enter this code:
 // no direct access
 defined( '_JEXEC' ) or die( 'Access Deny' );
+
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
-// error_reporting(E_ALL);
-// ini_set('display_errors',l);
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 class PlgSystemmyInject extends JPlugin
 {
@@ -31,22 +34,29 @@ class PlgSystemmyInject extends JPlugin
 		// $body = JResponse::getBody(); 													deprecated
 		$content= JFactory::getApplication()->getBody();
 		//JResponse::setBody($body); 														deprecated
-		$replacetext = $params->get('inputarea');
+		$params = $app->getParams();
+		$replacetext = $params->get('Inputarea', "HI! JOOMLA USER");
+
+		echo "<script type='text/javascript'>";
+		echo " alert('$replacetext')"; 
+		echo "</script>";
+
 		if (preg_match_all('/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is', $content, $matches))
-{
+			{
+				
 				$content = preg_replace(
 					'/(<h1.*?)(class *= *"|\')(.*)("|\')(.*>)/is',
 					'<h1>'.$replacetext.'</h1>',
 					$content);
-} 
-		elseif (preg_match_all('/(<h1.*?)(>)/is', $content, $matches))
-{
+			} 
+		elseif (preg_match_all('/(<h1.*?)(.*>)/is', $content, $matches))
+			{
 				$content = preg_replace(
-					'/(<h1.*?)(>)/',
+					'/(<h1.*?)(.*>)/is',
 					'<h1>'.$replacetext.'</h1>',
 					$content);
-}
+			}
+			
 		JFactory::getApplication()->setBody($content);
-		// $input_area=$this->params->get('input_area', defaultsetting);
 	}
 }
