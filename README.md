@@ -11,6 +11,10 @@ This repository is maintained for my submission in GSOC'22
 # myInject Plugin
 When a user activates the plugin, it should inject a JS script into the webpage, which attaches the text from the parameter field to each headline.
 
+## Live Video Demo
+https://youtu.be/W-CsnaP4-S0
+
+
 ## Configuration
 
 ### Initial setup the plugin
