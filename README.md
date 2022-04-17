@@ -53,12 +53,11 @@ public function onBeforeCompileHead()
 ## Plugin Specifications:
 - Type: <b> System </b> <br/>
 - Events Used: <b> onBeforeCompileHead </b>
-- Installable through the Joomla Extension Manager.
-- Executed in the backend.
-- Follows Joomla Coding Standards.
-- Follows Joomla Naming Conventions.
-- Joomla CodeSniffer configured.
-- 
+- Installable through the <b> Joomla Extension Manager</b>.
+- Executed in the <b> backend</b>.
+- Follows <b> Joomla Coding Standards</b>.
+- Follows Joomla <b> Naming Conventions</b> .
+- <b> Joomla CodeSniffer </b> configured.
 
 ## Plugin Folder Structure
 
