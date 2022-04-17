@@ -65,6 +65,11 @@ You have found an Issue, have a question or you would like to suggest changes re
 
 You want to translate this extension to your own language? Check out the [Crowdin Page for my Extensions](https://joomla.crowdin.com) for more details. Feel free to [open an issue here](https://github.com/shivamsingh124/joomla_plugin/issues/new) on any question that comes up.
 
+## License
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 # Hi, I'm Shivam, You can connect with me regarding any quries here :)! 👋
 
