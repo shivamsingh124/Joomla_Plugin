@@ -13,7 +13,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-class PlgSystemHeadingChange extends JPlugin
+class PlgSystemheadingplugins extends JPlugin
 {
 	/**
 	 * Constructor
@@ -28,7 +28,7 @@ class PlgSystemHeadingChange extends JPlugin
 	public function __construct($name, array $arguments = array())
 	{
 		// Define the minumum versions to be supported.
-		$this->loadLanguage('plg_system_HeadingChange');
+		$this->loadLanguage('plg_system_headingplugins');
 		parent::__construct($name, $arguments);
 		$this->minimumJoomla = '3.9';
 		$this->minimumPhp    = '7.2.5';
