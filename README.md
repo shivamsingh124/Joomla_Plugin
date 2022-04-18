@@ -17,9 +17,11 @@ https://youtu.be/zS67YMprPPU
 
 https://user-images.githubusercontent.com/82861332/163880116-233d84fa-aca6-448c-8718-684f2e3e8bcd.MP4
 
-
-![Joomla-3D-Vertical-logo-light-background-en](https://user-images.githubusercontent.com/82861332/163880389-108756b5-49e6-4d49-b6ab-df3b89acbcfa.png)
-
+<p align="center">
+  <img 
+    src="https://user-images.githubusercontent.com/82861332/163880389-108756b5-49e6-4d49-b6ab-df3b89acbcfa.png"
+  >
+</p>
 ## Configuration
 
 ### Initial setup the plugin
