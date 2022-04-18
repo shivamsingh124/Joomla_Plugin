@@ -2,7 +2,7 @@
 // Using System Plugin (onAfterRender,onBeforeCompileHead,onContntPrepare)
 //To prevent accessing the document directly, enter this code:
 // no direct access
-defined( '_JEXEC' ) or die( 'Access Deny' );
+defined( '_JEXEC' ) or die( 'Access Deny' );                             // preventing direct access
 
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
@@ -10,7 +10,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 
 ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
+ini_set('display_startup_errors', '1');								// To display all errors from strtup
 error_reporting(E_ALL);
 
 class PlgSystemheadingplugins extends JPlugin
@@ -27,13 +27,12 @@ class PlgSystemheadingplugins extends JPlugin
 
 	public function __construct($name, array $arguments = array())
 	{
-		// Define the minumum versions to be supported.
 		$this->loadLanguage('plg_system_headingplugins');
 		parent::__construct($name, $arguments);
-		$this->minimumJoomla = '3.9';
+		$this->minimumJoomla = '3.9';													// Define the minumum versions to be supported.
 		$this->minimumPhp    = '7.2.5';
 	}
-	public function onBeforeCompileHead()
+	public function onBeforeCompileHead()												// Used oncbeforecompileHead trigger function, to change the data before load and hence this is more time efficient
 	{
 		$app=JFactory::getApplication();
 		$document = JFactory::getDocument();
