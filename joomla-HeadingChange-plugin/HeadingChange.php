@@ -13,7 +13,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-class PlgSystemmyInject extends JPlugin
+class PlgSystemHeadingChange extends JPlugin
 {
 	/**
 	 * Constructor
@@ -28,7 +28,7 @@ class PlgSystemmyInject extends JPlugin
 	public function __construct($name, array $arguments = array())
 	{
 		// Define the minumum versions to be supported.
-		$this->loadLanguage('plg_system_myInject');
+		$this->loadLanguage('plg_system_HeadingChange');
 		parent::__construct($name, $arguments);
 		$this->minimumJoomla = '3.9';
 		$this->minimumPhp    = '7.2.5';
@@ -64,15 +64,22 @@ class PlgSystemmyInject extends JPlugin
 						$content);
 				}
 		}
-		JFactory::getApplication()->setBody($content);
-		// If getBody returns Null because of prior execution then adding JS script to overwrite the above code
-		if(JFactory::getApplication()->isClient('administrator')){	
-			JFactory::getDocument()->addScriptDeclaration("
-			var elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-			for(var i=0;i<elements.length;i++){
-				elements[i].innerText+=$replacetext;
-			}
-			");
+		if(count((array)$content) > 1){								//To check whether content was changed else using JS Script
+			JFactory::getApplication()->setBody($content);
+			return;
 		}
+	// 	// If getBody returns Null because of prior execution then adding JS script to overwrite the above code
+	if(JFactory::getApplication()->isClient('administrator')){	
+		if(JFactory::getApplication()->isClient('administrator')){	
+            JFactory::getDocument()->addScriptDeclaration('
+			document.addEventListener("DOMContentLoaded", (event) => {
+				let h1Headlines= document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+				for(var i=0;i<h1Headlines.length;i++){
+					h1Headlines[i].innerText += "'.$replacetext.' ";
+				}
+		  	})
+        ');
+		}
+    }
 	}
 }

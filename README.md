@@ -42,7 +42,7 @@ When a user activates the plugin, it should inject a JS script into the webpage,
 
 
 ```PHP
-class PlgSystemmyInject extends JPlugin
+class PlgSystemmyHeadingChange extends JPlugin
 {
 public function onBeforeCompileHead()
 	{
@@ -63,9 +63,9 @@ public function onBeforeCompileHead()
 
     ├── administrator
     │	└──language
-    │   	└── en-GB.plg_system_vsheadings.ini
-    └── myInject.php
-    └── myInject.xml
+    │   	└── en-GB.plg_system_HeadingChange.ini
+    └── HeadingChange.php
+    └── HeadingChange.xml
     └── joomla_plugin.rar
     └── Index.html
 
