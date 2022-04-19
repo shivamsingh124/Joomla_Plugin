@@ -1,3 +1,9 @@
+<p align="center">
+  <img 
+    src="https://user-images.githubusercontent.com/82861332/163880389-108756b5-49e6-4d49-b6ab-df3b89acbcfa.png"
+  >
+</p>
+
 Joomla Plugin Example
 =====================
 
@@ -12,10 +18,10 @@ This repository is maintained for my submission in GSOC'22
 When a user activates the plugin, it should inject a JS script into the webpage, which attaches the text from the parameter field to each headline.
 
 ## Live Video Demo
-https://youtu.be/W-CsnaP4-S0
 
+https://youtu.be/zS67YMprPPU
 
-https://user-images.githubusercontent.com/82861332/163722280-3d4a7d02-9634-4dd2-ba1c-00e11feb39f1.MP4
+https://user-images.githubusercontent.com/82861332/163880116-233d84fa-aca6-448c-8718-684f2e3e8bcd.MP4
 
 
 ## Configuration
