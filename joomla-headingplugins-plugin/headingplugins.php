@@ -24,6 +24,7 @@ class PlgSystemheadingplugins extends JPlugin
 	 * @since       1.6
 	 */
 	protected $app;
+	
 
 	public function __construct($name, array $arguments = array())
 	{
@@ -33,8 +34,14 @@ class PlgSystemheadingplugins extends JPlugin
 		$this->minimumPhp    = '7.2.5';
 	}
 	public function onBeforeCompileHead()												// Used oncbeforecompileHead trigger function, to change the data before load and hence this is more time efficient
-	{
-		$app=JFactory::getApplication();
+	{		try
+		{
+			$app = Factory::getApplication();
+		}
+		catch (Exception $e)
+		{
+			die('Failed to get app');
+		}
 		$document = JFactory::getDocument();
 		// $body = JResponse::getBody(); 													deprecated joomla 3.0
 		$content= $app->getBody();
@@ -68,7 +75,6 @@ class PlgSystemheadingplugins extends JPlugin
 			return;
 		}
 	// 	// If getBody returns Null because of prior execution then adding JS script to overwrite the above code
-	if(JFactory::getApplication()->isClient('administrator')){	
 		if(JFactory::getApplication()->isClient('administrator')){	
             JFactory::getDocument()->addScriptDeclaration('
 			document.addEventListener("DOMContentLoaded", (event) => {
@@ -79,6 +85,5 @@ class PlgSystemheadingplugins extends JPlugin
 		  	})
         ');
 		}
-    }
 	}
 }
