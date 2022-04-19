@@ -3,6 +3,7 @@
     src="https://user-images.githubusercontent.com/82861332/163880389-108756b5-49e6-4d49-b6ab-df3b89acbcfa.png"
   >
 </p>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/82861332/164069788-c6454dee-6073-4551-ad9c-8f8a36b1653f.gif)
 
 Joomla Plugin Example
 =====================
