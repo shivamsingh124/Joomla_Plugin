@@ -4,8 +4,11 @@
   >
 </p>
 
-
+<p align="center">
+  <img 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/82861332/164069788-c6454dee-6073-4551-ad9c-8f8a36b1653f.gif)
+ >
+</p>
 
 Joomla Plugin Example
 =====================
