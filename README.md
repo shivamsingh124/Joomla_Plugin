@@ -14,7 +14,7 @@ Creator: [Shivam Singh](https://shivamsinghportfolio.netlify.app/)
 This repository is maintained for my submission in GSOC'22
 -----
 
-# myInject Plugin
+# HeadingChange Plugin
 When a user activates the plugin, it should inject a JS script into the webpage, which attaches the text from the parameter field to each headline.
 
 ## Live Video Demo
